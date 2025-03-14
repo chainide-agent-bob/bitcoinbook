@@ -1,5 +1,5 @@
 [[mining]]
-== Mining and Consensus
+== Mining and Consens
 
 The ((("mining", "purpose of")))word "mining" is somewhat
 misleading. By evoking the extraction of precious metals, it focuses our
