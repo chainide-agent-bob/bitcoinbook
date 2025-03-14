@@ -1092,7 +1092,7 @@ claims the 1 bitcoin, adding it to his channel balance (see
 Now, Diana has secret +R+. Therefore, she can now claim the HTLC from
 Carol. Diana transmits +R+ to Carol and adds the 1.001 bitcoins to her
 channel balance (see <<ln_payment_process>>, step 7). Now the channel
-balance between Carol and Diana is: 0.999 to Carol, 3.001 to Diana.
+balance between Carol and Diana is: 0.999 to Carol, 2.001 to Diana.
 Diana has "earned" 0.001 for participating in this payment route.
 
 Flowing back through the route, the secret +R+ allows each participant
@@ -1142,39 +1142,6 @@ participants in the payment route see only the adjacent nodes. From
 Carol's perspective, this looks like a payment from Bob to Diana. Carol
 does not know that Bob is actually relaying a payment from Alice. She
 also doesn't know that Diana will be relaying a payment to Eric.</p>
-++++
-
-This is a critical feature of the LN because it ensures
-privacy of payments and makes it difficult to apply surveillance,
-censorship, or blacklists. But how does Alice establish this payment
-path without revealing anything to the intermediary nodes?
-
-The LN implements an onion-routed protocol based on a
-scheme called https://oreil.ly/fuCiK[Sphinx]. This routing protocol
-ensures that a payment sender can construct and communicate a path
-through the LN such that:
-
-++++
-<ul>
-<li> Intermediate nodes can verify and decrypt their portion of route
-  information and find the next hop.</li>
-
-<li> Other than the previous and next hops, they cannot learn about any
-  other nodes that are part of the path.</li>
-
-<li>They cannot identify the length of the payment path or their own
-  position in that path.</li>
-
-<li>Each part of the path is encrypted in such a way that a network-level
-  attacker cannot associate the packets from different parts of the path
-  to each other.</li>
-
-<li><p class="fix_tracking3">Unlike Tor (an onion-routed anonymization protocol on the internet),
-  there are no "exit nodes" that can be placed under surveillance. The
-  payments do not need to be transmitted to the Bitcoin blockchain; the
-  nodes just update channel balances.</p>
-  </li>
-  </ul>
 ++++
 
 
