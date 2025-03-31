@@ -463,7 +463,7 @@ structure of the((("inputs", "coinbase versus regular transactions"))) coinbase 
 
 ++++
 <table id="table_8-1">
-<caption>The structure of a “normal” transaction input</caption>
+<caption>The structure of a "normal" transaction input</caption>
 <thead>
 <tr>
 <th>Size</th>
@@ -598,7 +598,7 @@ as listed in <<block_header_structure_ch10>>.
 <tr>
 <td><p>32 bytes</p></td>
 <td><p>Merkle Root</p></td>
-<td><p>A hash that is the root of the merkle tree of this block’s transactions</p></td>
+<td><p>A hash that is the root of the merkle tree of this block's transactions</p></td>
 </tr>
 <tr>
 <td><p>4 bytes</p></td>
@@ -941,7 +941,7 @@ The equation can be summarized as:
 
 
 ----
-New Target = Old Target * (20,160 minutes / Actual Time of Last 2015 Blocks)
+New Target = Old Target * (Actual Time of Last 2015 Blocks / 20,160 minutes)
 ----
 
 [NOTE]
